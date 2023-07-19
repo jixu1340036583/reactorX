@@ -23,7 +23,7 @@
 
 ## 前置模块讲解
 
-线程池：[ThreadPool](https://gitee.com/jixu1340036583/threadpool)
+线程池：[ThreadPool](https://github.com/jixu1340036583/ThreadPool)
 
 
 ## 设计思路以及代码结构
