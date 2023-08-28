@@ -202,54 +202,6 @@ Channel.cc.s:
 	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/Channel.cc.s
 .PHONY : Channel.cc.s
 
-CurrentThread.o: CurrentThread.cc.o
-.PHONY : CurrentThread.o
-
-# target to build an object file
-CurrentThread.cc.o:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o
-.PHONY : CurrentThread.cc.o
-
-CurrentThread.i: CurrentThread.cc.i
-.PHONY : CurrentThread.i
-
-# target to preprocess a source file
-CurrentThread.cc.i:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/CurrentThread.cc.i
-.PHONY : CurrentThread.cc.i
-
-CurrentThread.s: CurrentThread.cc.s
-.PHONY : CurrentThread.s
-
-# target to generate assembly for a file
-CurrentThread.cc.s:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/CurrentThread.cc.s
-.PHONY : CurrentThread.cc.s
-
-DefaultPoller.o: DefaultPoller.cc.o
-.PHONY : DefaultPoller.o
-
-# target to build an object file
-DefaultPoller.cc.o:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o
-.PHONY : DefaultPoller.cc.o
-
-DefaultPoller.i: DefaultPoller.cc.i
-.PHONY : DefaultPoller.i
-
-# target to preprocess a source file
-DefaultPoller.cc.i:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.i
-.PHONY : DefaultPoller.cc.i
-
-DefaultPoller.s: DefaultPoller.cc.s
-.PHONY : DefaultPoller.s
-
-# target to generate assembly for a file
-DefaultPoller.cc.s:
-	cd /home/jixu/Mycode/ShiLei/reactorX/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ReactorX.dir/build.make src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.s
-.PHONY : DefaultPoller.cc.s
-
 EPollPoller.o: EPollPoller.cc.o
 .PHONY : EPollPoller.o
 
@@ -484,12 +436,6 @@ help:
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
-	@echo "... CurrentThread.o"
-	@echo "... CurrentThread.i"
-	@echo "... CurrentThread.s"
-	@echo "... DefaultPoller.o"
-	@echo "... DefaultPoller.i"
-	@echo "... DefaultPoller.s"
 	@echo "... EPollPoller.o"
 	@echo "... EPollPoller.i"
 	@echo "... EPollPoller.s"

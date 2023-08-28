@@ -1,8 +1,5 @@
 #pragma once
 
-/**
- * 用户使用muduo编写服务器程序
- */ 
 #include "EventLoop.h"
 #include "Acceptor.h"
 #include "InetAddress.h"
@@ -18,11 +15,13 @@
 #include <atomic>
 #include <unordered_map>
 namespace rx{
+
+using ThreadInitCallback = std::function<void(EventLoop*)>;
+
 // 对外的服务器编程使用的类
 class TcpServer : noncopyable
 {
 public:
-    using ThreadInitCallback = std::function<void(EventLoop*)>;
 
     enum Option
     {

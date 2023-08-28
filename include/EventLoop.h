@@ -5,10 +5,9 @@
 #include <atomic>
 #include <memory>
 #include <mutex>
-
+#include <thread>
 #include "noncopyable.h"
 #include "Timestamp.h"
-#include "CurrentThread.h"
 namespace rx{
 class Channel;
 class Poller;
@@ -43,7 +42,7 @@ public:
     bool hasChannel(Channel *channel);
 
     // 判断EventLoop对象是否在自己的线程里面
-    bool isInLoopThread() const { return threadId_ ==  CurrentThread::tid(); }
+    bool isInLoopThread() const { return threadId_ ==  std::this_thread::get_id(); }
 private:
     void handleRead(); // wake up
     void doPendingFunctors(); // 执行回调
@@ -53,7 +52,7 @@ private:
     std::atomic_bool looping_;  // 原子操作，通过CAS实现的
     std::atomic_bool quit_; // 标识退出loop循环
     
-    const pid_t threadId_; // 记录当前loop所在线程的id
+    const std::thread::id threadId_; // 记录当前loop所在线程的id
 
     Timestamp pollReturnTime_; // poller返回发生事件的channels的时间点
     std::unique_ptr<Poller> poller_;

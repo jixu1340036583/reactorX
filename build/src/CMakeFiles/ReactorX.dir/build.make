@@ -111,38 +111,10 @@ src/CMakeFiles/ReactorX.dir/Channel.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ReactorX.dir/Channel.cc.s"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jixu/Mycode/ShiLei/reactorX/src/Channel.cc -o CMakeFiles/ReactorX.dir/Channel.cc.s
 
-src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
-src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o: ../src/CurrentThread.cc
-src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o -MF CMakeFiles/ReactorX.dir/CurrentThread.cc.o.d -o CMakeFiles/ReactorX.dir/CurrentThread.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc
-
-src/CMakeFiles/ReactorX.dir/CurrentThread.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ReactorX.dir/CurrentThread.cc.i"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc > CMakeFiles/ReactorX.dir/CurrentThread.cc.i
-
-src/CMakeFiles/ReactorX.dir/CurrentThread.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ReactorX.dir/CurrentThread.cc.s"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc -o CMakeFiles/ReactorX.dir/CurrentThread.cc.s
-
-src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
-src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o: ../src/DefaultPoller.cc
-src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o -MF CMakeFiles/ReactorX.dir/DefaultPoller.cc.o.d -o CMakeFiles/ReactorX.dir/DefaultPoller.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc
-
-src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ReactorX.dir/DefaultPoller.cc.i"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc > CMakeFiles/ReactorX.dir/DefaultPoller.cc.i
-
-src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ReactorX.dir/DefaultPoller.cc.s"
-	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc -o CMakeFiles/ReactorX.dir/DefaultPoller.cc.s
-
 src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o: ../src/EPollPoller.cc
 src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o -MF CMakeFiles/ReactorX.dir/EPollPoller.cc.o.d -o CMakeFiles/ReactorX.dir/EPollPoller.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/EPollPoller.cc
 
 src/CMakeFiles/ReactorX.dir/EPollPoller.cc.i: cmake_force
@@ -156,7 +128,7 @@ src/CMakeFiles/ReactorX.dir/EPollPoller.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/EventLoop.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/EventLoop.cc.o: ../src/EventLoop.cc
 src/CMakeFiles/ReactorX.dir/EventLoop.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/ReactorX.dir/EventLoop.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/ReactorX.dir/EventLoop.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/EventLoop.cc.o -MF CMakeFiles/ReactorX.dir/EventLoop.cc.o.d -o CMakeFiles/ReactorX.dir/EventLoop.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/EventLoop.cc
 
 src/CMakeFiles/ReactorX.dir/EventLoop.cc.i: cmake_force
@@ -170,7 +142,7 @@ src/CMakeFiles/ReactorX.dir/EventLoop.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/InetAddress.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/InetAddress.cc.o: ../src/InetAddress.cc
 src/CMakeFiles/ReactorX.dir/InetAddress.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/ReactorX.dir/InetAddress.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/ReactorX.dir/InetAddress.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/InetAddress.cc.o -MF CMakeFiles/ReactorX.dir/InetAddress.cc.o.d -o CMakeFiles/ReactorX.dir/InetAddress.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/InetAddress.cc
 
 src/CMakeFiles/ReactorX.dir/InetAddress.cc.i: cmake_force
@@ -184,7 +156,7 @@ src/CMakeFiles/ReactorX.dir/InetAddress.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/Logger.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/Logger.cc.o: ../src/Logger.cc
 src/CMakeFiles/ReactorX.dir/Logger.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/ReactorX.dir/Logger.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/ReactorX.dir/Logger.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/Logger.cc.o -MF CMakeFiles/ReactorX.dir/Logger.cc.o.d -o CMakeFiles/ReactorX.dir/Logger.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/Logger.cc
 
 src/CMakeFiles/ReactorX.dir/Logger.cc.i: cmake_force
@@ -198,7 +170,7 @@ src/CMakeFiles/ReactorX.dir/Logger.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/Poller.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/Poller.cc.o: ../src/Poller.cc
 src/CMakeFiles/ReactorX.dir/Poller.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/ReactorX.dir/Poller.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/ReactorX.dir/Poller.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/Poller.cc.o -MF CMakeFiles/ReactorX.dir/Poller.cc.o.d -o CMakeFiles/ReactorX.dir/Poller.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/Poller.cc
 
 src/CMakeFiles/ReactorX.dir/Poller.cc.i: cmake_force
@@ -212,7 +184,7 @@ src/CMakeFiles/ReactorX.dir/Poller.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/Socket.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/Socket.cc.o: ../src/Socket.cc
 src/CMakeFiles/ReactorX.dir/Socket.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/ReactorX.dir/Socket.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/ReactorX.dir/Socket.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/Socket.cc.o -MF CMakeFiles/ReactorX.dir/Socket.cc.o.d -o CMakeFiles/ReactorX.dir/Socket.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/Socket.cc
 
 src/CMakeFiles/ReactorX.dir/Socket.cc.i: cmake_force
@@ -226,7 +198,7 @@ src/CMakeFiles/ReactorX.dir/Socket.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o: ../src/TcpConnection.cc
 src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/TcpConnection.cc.o -MF CMakeFiles/ReactorX.dir/TcpConnection.cc.o.d -o CMakeFiles/ReactorX.dir/TcpConnection.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/TcpConnection.cc
 
 src/CMakeFiles/ReactorX.dir/TcpConnection.cc.i: cmake_force
@@ -240,7 +212,7 @@ src/CMakeFiles/ReactorX.dir/TcpConnection.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: ../src/TcpServer.cc
 src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object src/CMakeFiles/ReactorX.dir/TcpServer.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/ReactorX.dir/TcpServer.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/TcpServer.cc.o -MF CMakeFiles/ReactorX.dir/TcpServer.cc.o.d -o CMakeFiles/ReactorX.dir/TcpServer.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/TcpServer.cc
 
 src/CMakeFiles/ReactorX.dir/TcpServer.cc.i: cmake_force
@@ -254,7 +226,7 @@ src/CMakeFiles/ReactorX.dir/TcpServer.cc.s: cmake_force
 src/CMakeFiles/ReactorX.dir/Timestamp.cc.o: src/CMakeFiles/ReactorX.dir/flags.make
 src/CMakeFiles/ReactorX.dir/Timestamp.cc.o: ../src/Timestamp.cc
 src/CMakeFiles/ReactorX.dir/Timestamp.cc.o: src/CMakeFiles/ReactorX.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object src/CMakeFiles/ReactorX.dir/Timestamp.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/CMakeFiles/ReactorX.dir/Timestamp.cc.o"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ReactorX.dir/Timestamp.cc.o -MF CMakeFiles/ReactorX.dir/Timestamp.cc.o.d -o CMakeFiles/ReactorX.dir/Timestamp.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/Timestamp.cc
 
 src/CMakeFiles/ReactorX.dir/Timestamp.cc.i: cmake_force
@@ -270,8 +242,6 @@ ReactorX_OBJECTS = \
 "CMakeFiles/ReactorX.dir/Acceptor.cc.o" \
 "CMakeFiles/ReactorX.dir/Buffer.cc.o" \
 "CMakeFiles/ReactorX.dir/Channel.cc.o" \
-"CMakeFiles/ReactorX.dir/CurrentThread.cc.o" \
-"CMakeFiles/ReactorX.dir/DefaultPoller.cc.o" \
 "CMakeFiles/ReactorX.dir/EPollPoller.cc.o" \
 "CMakeFiles/ReactorX.dir/EventLoop.cc.o" \
 "CMakeFiles/ReactorX.dir/InetAddress.cc.o" \
@@ -288,8 +258,6 @@ ReactorX_EXTERNAL_OBJECTS =
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/Acceptor.cc.o
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/Buffer.cc.o
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/Channel.cc.o
-../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o
-../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/EventLoop.cc.o
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/InetAddress.cc.o
@@ -302,7 +270,7 @@ ReactorX_EXTERNAL_OBJECTS =
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/build.make
 ../lib/libReactorX.so: ../lib/libThreadPool.so
 ../lib/libReactorX.so: src/CMakeFiles/ReactorX.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared library ../../lib/libReactorX.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jixu/Mycode/ShiLei/reactorX/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX shared library ../../lib/libReactorX.so"
 	cd /home/jixu/Mycode/ShiLei/reactorX/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ReactorX.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

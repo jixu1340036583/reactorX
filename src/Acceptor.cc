@@ -10,7 +10,7 @@
 namespace rx{
 static int createNonblocking()
 {
-    int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK | SOCK_CLOEXEC, 0);
+    int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
     if (sockfd < 0) 
     {
         LOG_FATAL("%s:%s:%d listen socket create err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
@@ -21,30 +21,30 @@ static int createNonblocking()
 
 Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reuseport)
     : loop_(loop)
-    , acceptSocket_(createNonblocking()) // 生成socket
+    , acceptSocket_(createNonblocking()) 
     , acceptChannel_(loop, acceptSocket_.fd())
     , listenning_(false)
 {
     acceptSocket_.setReuseAddr(true);
     acceptSocket_.setReusePort(true);
-    acceptSocket_.bindAddress(listenAddr); // bind
+    acceptSocket_.bindAddress(listenAddr); 
     acceptChannel_.setReadCallback(std::bind(&Acceptor::handleRead, this));
 }
 
 Acceptor::~Acceptor()
 {
     acceptChannel_.disableAll();
-    acceptChannel_.remove();
+    acceptChannel_.removeChannel();
 }
 
 void Acceptor::listen()
 {
     listenning_ = true;
-    acceptSocket_.listen(); // listen
-    acceptChannel_.enableReading(); // acceptChannel_ => Poller
+    acceptSocket_.listen();
+    acceptChannel_.enableReading();
 }
 
-// listenfd有事件发生了，就是有新用户连接了
+// listenfd有事件发生了，就是产生新的客户端连接了
 void Acceptor::handleRead()
 {
     InetAddress peerAddr;

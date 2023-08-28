@@ -6,12 +6,7 @@
 #include <unistd.h>
 #include <strings.h>
 namespace rx{
-// channel未添加到poller中
-const int kNew = -1;  // channel的成员index_ = -1
-// channel已添加到poller中
-const int kAdded = 1;
-// channel从poller中删除
-const int kDeleted = 2;
+
 
 EPollPoller::EPollPoller(EventLoop *loop)
     : Poller(loop)
@@ -62,39 +57,35 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
     return now;
 }
 
-// channel update remove => EventLoop updateChannel removeChannel => Poller updateChannel removeChannel
-/**
- *            EventLoop  =>   poller.poll
- *     ChannelList      Poller
- *                     ChannelMap  <fd, channel*>   epollfd
- */ 
+
+// 
 void EPollPoller::updateChannel(Channel *channel)
 {
-    const int index = channel->index();
-    LOG_DEBUG("func=%s => fd=%d events=%d index=%d \n", __FUNCTION__, channel->fd(), channel->events(), index);
+    const int state = channel->state();
+    LOG_DEBUG("func=%s => fd=%d events=%d state=%d \n", __FUNCTION__, channel->fd(), channel->events(), state);
 
-    if (index == kNew || index == kDeleted)
+    if (state == New || state == Deleted)
     {
-        if (index == kNew)
+        if (state == New)
         {
             int fd = channel->fd();
             channels_[fd] = channel;
         }
 
-        channel->set_index(kAdded);
-        update(EPOLL_CTL_ADD, channel);
+        channel->set_state(Added);
+        updateChannel(EPOLL_CTL_ADD, channel);
     }
-    else  // channel已经在poller上注册过了
+    else  // state是Added状态
     {
         int fd = channel->fd();
-        if (channel->isNoneEvent())
+        if (channel->isNoneEvent()) // 如果没有关注事件，那么就是注销该通道
         {
-            update(EPOLL_CTL_DEL, channel);
-            channel->set_index(kDeleted);
+            updateChannel(EPOLL_CTL_DEL, channel);
+            channel->set_state(Deleted);
         }
         else
         {
-            update(EPOLL_CTL_MOD, channel);
+            updateChannel(EPOLL_CTL_MOD, channel); // 否则就是修改关注的事件
         }
     }
 }
@@ -107,27 +98,14 @@ void EPollPoller::removeChannel(Channel *channel)
 
     LOG_DEBUG("func=%s => fd=%d\n", __FUNCTION__, fd);
     
-    int index = channel->index();
-    if (index == kAdded)
-    {
-        update(EPOLL_CTL_DEL, channel);
-    }
-    channel->set_index(kNew);
-}
-
-// 填写活跃的连接
-void EPollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels) const
-{
-    for (int i=0; i < numEvents; ++i)
-    {
-        Channel *channel = static_cast<Channel*>(events_[i].data.ptr);
-        channel->set_revents(events_[i].events);
-        activeChannels->push_back(channel); // EventLoop就拿到了它的poller给它返回的所有发生事件的channel列表了
-    }
+    int state = channel->state();
+    if (state == Added) updateChannel(EPOLL_CTL_DEL, channel);
+    
+    channel->set_state(Deleted);
 }
 
 // 更新channel通道 epoll_ctl add/mod/del
-void EPollPoller::update(int operation, Channel *channel)
+void EPollPoller::updateChannel(int operation, Channel *channel)
 {
     epoll_event event;
     bzero(&event, sizeof event);
@@ -150,4 +128,19 @@ void EPollPoller::update(int operation, Channel *channel)
         }
     }
 }
+
+
+
+// 填写活跃的连接
+void EPollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels) const
+{
+    for (int i=0; i < numEvents; ++i)
+    {
+        Channel *channel = static_cast<Channel*>(events_[i].data.ptr);
+        channel->set_revents(events_[i].events);
+        activeChannels->push_back(channel); // EventLoop就拿到了它的poller给它返回的所有发生事件的channel列表了
+    }
+}
+
+
 };

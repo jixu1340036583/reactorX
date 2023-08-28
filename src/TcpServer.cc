@@ -64,19 +64,18 @@ void TcpServer::start()
         if(threadInitCallback_){
             threadInitCallback_(loop_); // baseloop
         }
-        // threadPool_->start(threadInitCallback_); // 启动底层的loop线程池
         threadPool_->Start();
-        auto func = [](std::promise<EventLoop*>* pm, ThreadInitCallback cb){
+        auto func = [](std::promise<EventLoop*>& pm, ThreadInitCallback& cb){
             EventLoop* loop(new EventLoop);
-            pm->set_value(loop);
+            pm.set_value(loop);
             if(cb) cb(loop);
             loop->loop();
         };
         for(int i = 0; i < LoopNum_; ++i){
-            EventLoop* loop;
             std::promise<EventLoop*> pm;
             std::future<EventLoop*> fu = pm.get_future();
-            threadPool_->Run(func, &pm, threadInitCallback_);
+            // pm是不可拷贝类型，但是bind会返回一个函数对象，并且会将参数拷贝考函数对象中保存，因此必须使用std::ref引用包装器
+            threadPool_->Run(func, std::ref(pm), std::ref(threadInitCallback_));
             loops_.push_back(std::shared_ptr<EventLoop>(fu.get()));
         }
         loop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
@@ -85,7 +84,6 @@ void TcpServer::start()
 
 EventLoop* TcpServer::getNextLoop(){
     EventLoop *loop = loop_; // 如果用户没有设置更多的线程，那么每次都返回主事件循环
-    // 通过轮询获取下一个处理事件的loop
     if (!loops_.empty()) 
     {
         loop = loops_[next_].get();
@@ -126,11 +124,11 @@ void TcpServer::newConnection(int sockfd, const InetAddress &peerAddr)
     TcpConnectionPtr conn(new TcpConnection(
                             ioLoop,
                             connName,
-                            sockfd,   // Socket Channel
+                            sockfd,   
                             localAddr,
                             peerAddr));
     connections_[connName] = conn;
-    // 下面的回调都是用户设置给TcpServer=>TcpConnection=>Channel=>Poller=>notify channel调用回调
+
     conn->setConnectionCallback(connectionCallback_);
     conn->setMessageCallback(messageCallback_);
     conn->setWriteCompleteCallback(writeCompleteCallback_);

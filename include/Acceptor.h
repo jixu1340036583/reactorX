@@ -6,6 +6,7 @@
 #include "Channel.h"
 
 namespace rx{
+
 class EventLoop;
 class InetAddress;
 
@@ -26,11 +27,12 @@ public:
 private:
     void handleRead();
     
-    EventLoop *loop_; // Acceptor用的就是用户定义的那个baseLoop，也称作mainLoop
-    Socket acceptSocket_;
-    Channel acceptChannel_;
+    EventLoop *loop_; // 主反应堆事件循环，监听的就是当前的监听socket
+    Socket acceptSocket_; // 监听socket
+    Channel acceptChannel_; // 主反应堆监听的通道
     NewConnectionCallback newConnectionCallback_;
     bool listenning_;
 };
+
 
 };

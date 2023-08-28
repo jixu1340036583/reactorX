@@ -50,9 +50,6 @@ public:
     void setWriteCompleteCallback(const WriteCompleteCallback& cb)
     { writeCompleteCallback_ = cb; }
 
-    void setHighWaterMarkCallback(const HighWaterMarkCallback& cb, size_t highWaterMark)
-    { highWaterMarkCallback_ = cb; highWaterMark_ = highWaterMark; }
-
     void setCloseCallback(const CloseCallback& cb)
     { closeCallback_ = cb; }
 
@@ -63,6 +60,13 @@ public:
 private:
     enum StateE {kDisconnected, kConnecting, kConnected, kDisconnecting};
     void setState(StateE state) { state_ = state; }
+    std::string get_state(int state){
+        if(state == kDisconnected) return "kDisconnected";
+        else if(state == kConnecting) return "kConnecting";
+        else if(state == kConnected) return "kConnected";
+        else return "kDisconnecting";
+    }
+
 
     void handleRead(Timestamp receiveTime);
     void handleWrite();
@@ -71,6 +75,8 @@ private:
 
     void sendInLoop(const void* message, size_t len);
     void shutdownInLoop();
+
+
 
     EventLoop *loop_; // 这里绝对不是baseLoop， 因为TcpConnection都是在subLoop里面管理的
     const std::string name_;
@@ -87,7 +93,6 @@ private:
     ConnectionCallback connectionCallback_; // 有新连接时的回调
     MessageCallback messageCallback_; // 有读写消息时的回调
     WriteCompleteCallback writeCompleteCallback_; // 消息发送完成以后的回调
-    HighWaterMarkCallback highWaterMarkCallback_;
     CloseCallback closeCallback_;
     size_t highWaterMark_;
 

@@ -11,8 +11,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/jixu/Mycode/ShiLei/reactorX/src/Acceptor.cc" "src/CMakeFiles/ReactorX.dir/Acceptor.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/Acceptor.cc.o.d"
   "/home/jixu/Mycode/ShiLei/reactorX/src/Buffer.cc" "src/CMakeFiles/ReactorX.dir/Buffer.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/Buffer.cc.o.d"
   "/home/jixu/Mycode/ShiLei/reactorX/src/Channel.cc" "src/CMakeFiles/ReactorX.dir/Channel.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/Channel.cc.o.d"
-  "/home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc" "src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/CurrentThread.cc.o.d"
-  "/home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc" "src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/DefaultPoller.cc.o.d"
   "/home/jixu/Mycode/ShiLei/reactorX/src/EPollPoller.cc" "src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/EPollPoller.cc.o.d"
   "/home/jixu/Mycode/ShiLei/reactorX/src/EventLoop.cc" "src/CMakeFiles/ReactorX.dir/EventLoop.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/EventLoop.cc.o.d"
   "/home/jixu/Mycode/ShiLei/reactorX/src/InetAddress.cc" "src/CMakeFiles/ReactorX.dir/InetAddress.cc.o" "gcc" "src/CMakeFiles/ReactorX.dir/InetAddress.cc.o.d"

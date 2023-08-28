@@ -3,7 +3,7 @@
 #include "Socket.h"
 #include "Channel.h"
 #include "EventLoop.h"
-
+#include <unistd.h>
 #include <functional>
 #include <errno.h>
 #include <sys/types.h>         
@@ -64,26 +64,18 @@ TcpConnection::~TcpConnection()
 
 void TcpConnection::send(const std::string &buf)
 {
-    if (state_ == kConnected)
-    {
-        if (loop_->isInLoopThread())
-        {
-            sendInLoop(buf.c_str(), buf.size());
-        }
-        else
-        {
-            loop_->runInLoop(std::bind(
-                &TcpConnection::sendInLoop,
-                this,
-                buf.c_str(),
-                buf.size()
-            ));
-        }
+    if (state_ == kConnected){
+        loop_->runInLoop(std::bind(
+            &TcpConnection::sendInLoop,
+            this,
+            buf.c_str(),
+            buf.size()
+        ));
     }
 }
 
 /**
- * 发送数据  应用写的快， 而内核发送数据慢， 需要把待发送数据写入缓冲区， 而且设置了水位回调
+ * 发送数据  应用写的快， 而内核发送数据慢， 需要把待发送数据写入缓冲区， 并且设置了水位回调
  */ 
 void TcpConnection::sendInLoop(const void* data, size_t len)
 {
@@ -127,25 +119,12 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
         }
     }
 
-    // 说明当前这一次write，并没有把数据全部发送出去，剩余的数据需要保存到缓冲区当中，然后给channel
-    // 注册epollout事件，poller发现tcp的发送缓冲区有空间，会通知相应的sock-channel，调用writeCallback_回调方法
-    // 也就是调用TcpConnection::handleWrite方法，把发送缓冲区中的数据全部发送完成
     if (!faultError && remaining > 0) 
     {
-        // 目前发送缓冲区剩余的待发送数据的长度
-        size_t oldLen = outputBuffer_.readableBytes();
-        if (oldLen + remaining >= highWaterMark_
-            && oldLen < highWaterMark_
-            && highWaterMarkCallback_)
-        {
-            loop_->queueInLoop(
-                std::bind(highWaterMarkCallback_, shared_from_this(), oldLen+remaining)
-            );
-        }
         outputBuffer_.append((char*)data + nwrote, remaining);
         if (!channel_->isWriting())
         {
-            channel_->enableWriting(); // 这里一定要注册channel的写事件，否则poller不会给channel通知epollout
+            channel_->enableWriting(); 
         }
     }
 }
@@ -174,7 +153,6 @@ void TcpConnection::shutdownInLoop()
 void TcpConnection::connectEstablished()
 {
     setState(kConnected);
-    channel_->tie(shared_from_this());
     channel_->enableReading(); // 向poller注册channel的epollin事件
 
     // 新连接建立，执行回调
@@ -190,13 +168,13 @@ void TcpConnection::connectDestroyed()
         channel_->disableAll(); // 把channel的所有感兴趣的事件，从poller中del掉
         connectionCallback_(shared_from_this());
     }
-    channel_->remove(); // 把channel从poller中删除掉
+    channel_->removeChannel(); // 把channel从poller中删除掉
 }
 
 void TcpConnection::handleRead(Timestamp receiveTime)
 {
     int savedErrno = 0;
-    // 将数据从内核缓冲区读到Buffer中
+    // 将数据从socket缓冲区读到Buffer中
     ssize_t n = inputBuffer_.readFd(channel_->fd(), &savedErrno);
     if (n > 0)
     {
@@ -226,7 +204,8 @@ void TcpConnection::handleWrite()
             outputBuffer_.retrieve(n);
             if (outputBuffer_.readableBytes() == 0)
             {
-                channel_->disableWriting();
+                // 如果已经将输出缓冲区的数据都写到内核中了，那就取消注册写事件
+                channel_->disableWriting(); 
                 if (writeCompleteCallback_)
                 {
                     // 唤醒loop_对应的thread线程，执行回调
@@ -254,7 +233,7 @@ void TcpConnection::handleWrite()
 // poller => channel::closeCallback => TcpConnection::handleClose
 void TcpConnection::handleClose()
 {
-    LOG_INFO("TcpConnection::handleClose fd=%d state=%d \n", channel_->fd(), (int)state_);
+    LOG_INFO("TcpConnection::handleClose fd=%d state = %s \n", channel_->fd(), get_state(state_).c_str());
     setState(kDisconnected);
     channel_->disableAll();
 

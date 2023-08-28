@@ -34,7 +34,7 @@
 					]
 				},
 				"path" : "/usr/bin/gcc",
-				"version" : "11.3.0"
+				"version" : "11.4.0"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -80,7 +80,7 @@
 					]
 				},
 				"path" : "/usr/bin/g++",
-				"version" : "11.3.0"
+				"version" : "11.4.0"
 			},
 			"language" : "CXX",
 			"sourceFileExtensions" : 

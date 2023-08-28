@@ -16,16 +16,6 @@
 },
 {
   "directory": "/home/jixu/Mycode/ShiLei/reactorX/build/src",
-  "command": "/usr/bin/g++ -DReactorX_EXPORTS -I/home/jixu/Mycode/ShiLei/reactorX/include -I/home/jixu/Mycode/ShiLei/reactorX/include/threadpool  -g -g -fPIC -o CMakeFiles/ReactorX.dir/CurrentThread.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc",
-  "file": "/home/jixu/Mycode/ShiLei/reactorX/src/CurrentThread.cc"
-},
-{
-  "directory": "/home/jixu/Mycode/ShiLei/reactorX/build/src",
-  "command": "/usr/bin/g++ -DReactorX_EXPORTS -I/home/jixu/Mycode/ShiLei/reactorX/include -I/home/jixu/Mycode/ShiLei/reactorX/include/threadpool  -g -g -fPIC -o CMakeFiles/ReactorX.dir/DefaultPoller.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc",
-  "file": "/home/jixu/Mycode/ShiLei/reactorX/src/DefaultPoller.cc"
-},
-{
-  "directory": "/home/jixu/Mycode/ShiLei/reactorX/build/src",
   "command": "/usr/bin/g++ -DReactorX_EXPORTS -I/home/jixu/Mycode/ShiLei/reactorX/include -I/home/jixu/Mycode/ShiLei/reactorX/include/threadpool  -g -g -fPIC -o CMakeFiles/ReactorX.dir/EPollPoller.cc.o -c /home/jixu/Mycode/ShiLei/reactorX/src/EPollPoller.cc",
   "file": "/home/jixu/Mycode/ShiLei/reactorX/src/EPollPoller.cc"
 },

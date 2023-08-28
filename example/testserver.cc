@@ -2,8 +2,8 @@
 #include <Logger.h>
 #include <string>
 #include <functional>
-
-
+#include "TcpServer.h"
+#include "EventLoop.h"
 class EchoServer
 {
 public:
@@ -28,6 +28,8 @@ public:
     }
     void start()
     {
+        rx::ThreadInitCallback  cb = [](rx::EventLoop* ep){ std::cout << "线程初始化" << std::endl; };
+        server_.setThreadInitcallback(cb);
         server_.start();
     }
 private:
@@ -43,7 +45,6 @@ private:
             LOG_INFO("Connection DOWN : %s", conn->peerAddress().toIpPort().c_str());
         }
     }
-
     // 可读写事件回调
     void onMessage(const rx::TcpConnectionPtr &conn,
                 rx::Buffer *buf,
@@ -60,6 +61,7 @@ private:
 
 int main()
 {
+
     rx::EventLoop loop;
     rx::InetAddress addr(8023);
     EchoServer server(&loop, addr, "EchoServer-01"); // Acceptor non-blocking listenfd  create bind 

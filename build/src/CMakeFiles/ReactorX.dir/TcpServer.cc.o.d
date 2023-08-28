@@ -171,7 +171,9 @@ src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
  /usr/include/c++/11/bits/std_mutex.h \
- /usr/include/c++/11/bits/unique_lock.h \
+ /usr/include/c++/11/bits/unique_lock.h /usr/include/c++/11/thread \
+ /usr/include/c++/11/bits/std_thread.h \
+ /usr/include/c++/11/bits/this_thread_sleep.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/noncopyable.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/Timestamp.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/ostream \
@@ -189,18 +191,6 @@ src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/jixu/Mycode/ShiLei/reactorX/include/CurrentThread.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
- /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /usr/include/linux/close_range.h \
- /usr/include/x86_64-linux-gnu/sys/syscall.h \
- /usr/include/x86_64-linux-gnu/asm/unistd.h \
- /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
- /usr/include/x86_64-linux-gnu/bits/syscall.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/Acceptor.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/Socket.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/Channel.h \
@@ -233,8 +223,6 @@ src/CMakeFiles/ReactorX.dir/TcpServer.cc.o: \
  /usr/include/c++/11/bits/list.tcc /usr/include/c++/11/queue \
  /usr/include/c++/11/deque /usr/include/c++/11/bits/stl_deque.h \
  /usr/include/c++/11/bits/deque.tcc /usr/include/c++/11/bits/stl_queue.h \
- /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
- /usr/include/c++/11/bits/this_thread_sleep.h \
  /usr/include/c++/11/condition_variable /usr/include/c++/11/future \
  /usr/include/c++/11/bits/atomic_futex.h \
  /home/jixu/Mycode/ShiLei/reactorX/include/Logger.h \

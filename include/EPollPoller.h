@@ -30,7 +30,7 @@ private:
     // 填写活跃的连接
     void fillActiveChannels(int numEvents, ChannelList *activeChannels) const;
     // 更新channel通道
-    void update(int operation, Channel *channel);
+    void updateChannel(int operation, Channel *channel);
 
     using EventList = std::vector<epoll_event>;
 
